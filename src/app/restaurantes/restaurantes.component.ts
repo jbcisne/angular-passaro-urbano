@@ -3,28 +3,27 @@ import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
-  providers: [ OfertasService ]
+  selector: 'app-restaurantes',
+  templateUrl: './restaurantes.component.html',
+  styleUrls: ['./restaurantes.component.css'],
+  providers:[OfertasService]
 })
-export class HomeComponent implements OnInit {
+export class RestaurantesComponent implements OnInit {
 
-  public ofertas: Array<Oferta>
+  public ofertas: Oferta[]
 
   constructor(private ofertaService: OfertasService) { }
 
   ngOnInit() {
-    this.ofertaService.getOfertas()
+    this.ofertaService.getOfertasPorCategoria('restaurante')
       .then((arrOferta: Array<Oferta>) => {
-        console.log('execução do retorno apos 3 segundos')
+        console.log(arrOferta)
           this.ofertas = arrOferta;
       })
       .catch((param: any) => {
           console.log(param);
           
       })
-
   }
 
 }
