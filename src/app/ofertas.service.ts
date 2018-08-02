@@ -1,8 +1,7 @@
 import { Oferta } from "./shared/oferta.model";
 import { Http, Response } from "../../node_modules/@angular/http";
 import { Injectable } from "../../node_modules/@angular/core";
-
-//import { toPromise as t} from '../../node_modules/rxjs/add/operator/toPromise';
+import { URL_API } from "./app.api";
 
 @Injectable()
 export class OfertasService {
@@ -10,21 +9,27 @@ export class OfertasService {
     constructor(private http: Http){}
 
     public getOferta(id: number): Promise<Oferta> {
-        return this.http.get(`http://localhost:3000/ofertas/${id}`)
+        return this.http.get(`${URL_API}/ofertas/${id}`)
             .toPromise()
             .then((resposta: Response) => resposta.json())
     }
 
     public getOfertas(): Promise<Oferta[]> {
-        return this.http.get('http://localhost:3000/ofertas')
+        return this.http.get(`${URL_API}/ofertas`)
             .toPromise()
             .then((resposta: Response) => resposta.json())
     }
 
     public getOfertasPorCategoria(categoria: string): Promise<Oferta[]> {
-        return this.http.get(`http://localhost:3000/ofertas?categoria=${categoria}`)
+        return this.http.get(`${URL_API}/ofertas?categoria=${categoria}`)
             .toPromise()
             .then((resposta: Response) => resposta.json())
+    }
+
+    public getComoUsarOferta(id: Number): Promise<string> {
+        return this.http.get(`${URL_API}/como-usar/${id}`)
+            .toPromise()
+            .then((resposta: Response) => resposta.json()['descricao'])
     }
 
     
