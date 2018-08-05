@@ -1,10 +1,32 @@
 <div class="fixed-top">
   <nav class="navbar navbar-light bg-faded">
     <div class="container">
-      <a routerLink='/' class="navbar-brand">
-        <img src="/assets/logo.png" />
-      </a>
-      <a routerLink='/'><img src="/assets/carrinho.png" /></a>
+      <div class="row">
+        <div class="col-md-4">
+            <a class="navbar-brand" routerLink='/'>
+              <img src="/assets/logo.png" />
+            </a>
+        </div>
+
+        <!-- 
+          # é usada para criar variavel de referencia para o elemento criado. Sendo assim pode-se passar
+          apenas o valor do elemento no eventBinding 
+          (keyup)="pesquisa(termoDaPesquisa.value)
+
+          com isso não precisa parar o elemento interio no eventBinding
+          (keyup)="pesquisa($event)"
+        -->
+        <div class="col-md-6">
+          <input type="text" 
+          class="form-control" 
+          placeholder="Pesquise por ofertas..." 
+          (keyup)="pesquisa($event)"
+          />
+        </div>
+        <div class="col-md-2">
+            <a routerLink='/'><img src="/assets/carrinho.png" /></a>
+        </div>
+      </div>
     </div>
   </nav>
 
