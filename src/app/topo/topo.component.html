@@ -22,6 +22,18 @@
           placeholder="Pesquise por ofertas..." 
           (keyup)="pesquisa($event)"
           />
+          <ul class="list-group" style="position: absolute;">
+            <!-- 
+              pipe async se escreve no Observable ofertas para assistir ao Oferat[] 
+              desta maneira não precisa do atributo o publico na classe do componente
+              nem mesmo o subscribe no Observable
+            -->
+            <li class="list-group-item" *ngFor="let oferta of ofertas | async">
+              <a [routerLink]="['/oferta', oferta.id]" (click)="limparPesquisa()">
+                {{ oferta.titulo | descricaoReduzida:15 }}
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="col-md-2">
             <a routerLink='/'><img src="/assets/carrinho.png" /></a>

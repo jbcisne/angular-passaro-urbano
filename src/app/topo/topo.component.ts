@@ -13,7 +13,7 @@ import { switchMap, debounceTime, distinctUntilChanged, catchError } from '../..
 export class TopoComponent implements OnInit {
 
   public ofertas: Observable<Oferta[]>
-
+  
   private subjectPesquisa: Subject<string> = new Subject<string>()
 
   constructor(private ofertaService: OfertasService) { }
@@ -24,25 +24,23 @@ export class TopoComponent implements OnInit {
       debounceTime(1000), // executa a ação do switchMap após 1 segundo
       distinctUntilChanged(), // se o termo da pesquisa for igual ao termo da pesquisa anterior não faz a nova pesquisa
       switchMap((termoBusca: string) => {
-        console.log('Requisicao htpp para a api')
-
         if (termoBusca.trim() === '') {
           return of<Oferta[]>([])
         }
         return this.ofertaService.pesquisaOfertas(termoBusca)
       }),
       catchError((erro: any) => {
-        console.log(erro)
         return of<Oferta[]>([])
       })
     )
-    
-    this.ofertas.subscribe((ofertas: Oferta[]) => console.log(ofertas))
   }
 
   public pesquisa(event: Event): void {
     let termoBusca = (<HTMLInputElement>event.target).value;
-    console.log('Termo de busca: ', termoBusca)
     this.subjectPesquisa.next(termoBusca);
+  }
+
+  public limparPesquisa(): void {
+    this.subjectPesquisa.next('')
   }
 }
