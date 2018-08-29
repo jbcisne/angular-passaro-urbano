@@ -187,60 +187,25 @@
   ],
   "pedidos": [
     {
-      "endereco": "asdfasdf",
-      "numero": "90",
-      "complemento": "adsf",
-      "formaPagamento": "dinheiro",
-      "id": 1
+      "id": 1,
+      "endereco": "quadra teste",
+      "numero": 12,
+      "complemento": "rua 5",
+      "formaPagamento": "dinheiro"
     },
     {
-      "endereco": "Rua Vasco",
-      "numero": "2",
-      "complemento": "323",
-      "formaPagamento": "debito",
+      "endereco": "Rua Vasco Dos Reis, Qd 138, Lote 9",
+      "numero": "sn",
+      "complemento": "teste",
+      "formaPagamento": "dinheiro",
       "id": 2
     },
     {
-      "endereco": "Rua Vasco",
-      "numero": "2",
-      "complemento": "323",
-      "formaPagamento": "debito",
-      "id": 3
-    },
-    {
-      "endereco": "Rua Vasco",
-      "numero": "2",
-      "complemento": "323",
-      "formaPagamento": "debito",
-      "id": 4
-    },
-    {
-      "endereco": "Rua Vasco",
-      "numero": "2",
-      "complemento": "323",
-      "formaPagamento": "debito",
-      "id": 5
-    },
-    {
-      "endereco": "Rua Vasco",
-      "numero": "2",
-      "complemento": "323",
-      "formaPagamento": "debito",
-      "id": 6
-    },
-    {
-      "endereco": "Rua Vasco",
-      "numero": "2",
-      "complemento": "323",
-      "formaPagamento": "debito",
-      "id": 7
-    },
-    {
-      "endereco": "Rua Vasco dos Reis",
-      "numero": "1",
-      "complemento": "adsçfasd",
+      "endereco": "Rua Leolince",
+      "numero": "32",
+      "complemento": "",
       "formaPagamento": "dinheiro",
-      "id": 8
+      "id": 3
     }
   ]
 }
