@@ -206,6 +206,13 @@
       "complemento": "",
       "formaPagamento": "dinheiro",
       "id": 3
+    },
+    {
+      "endereco": "rua maria das flores",
+      "numero": "155",
+      "complemento": "casa 2",
+      "formaPagamento": "dinheiro",
+      "id": 4
     }
   ]
 }

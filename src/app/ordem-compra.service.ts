@@ -1,4 +1,4 @@
-import { Pedido } from "./shared/pedido.mode";
+import { Pedido } from "./shared/pedido.model";
 import { Injectable } from "@angular/core";
 import { Http, RequestOptions, Headers } from "@angular/http";
 import { Observable } from "rxjs";
