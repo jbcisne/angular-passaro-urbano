@@ -1,13 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { OfertasService } from '../ofertas.service';
+import CarrinhoService from '../carrinho.service';
 import { Oferta } from '../shared/oferta.model';
 
 @Component({
   selector: 'app-oferta',
   templateUrl: './oferta.component.html',
   styleUrls: ['./oferta.component.css'],
-  providers: [OfertasService]
+  providers: [OfertasService, CarrinhoService]
 })
 export class OfertaComponent implements OnInit {
 
@@ -15,7 +16,8 @@ export class OfertaComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute, 
-    private ofertaService: OfertasService
+    private ofertaService: OfertasService,
+    private carrinhoService: CarrinhoService
   ) { }
 
   ngOnInit() {
@@ -29,6 +31,10 @@ export class OfertaComponent implements OnInit {
   }
 
   ngOnDestroy(){
+  }
+
+  public adicionarItemCarrinho(): void {
+    this.carrinhoService.incluirItem(this.oferta)
   }
 
 }
