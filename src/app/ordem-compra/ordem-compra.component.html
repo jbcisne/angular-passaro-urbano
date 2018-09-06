@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="ordem-compra">
+  <div class="ordem-compra" *ngIf="idPedidoCompra === undefined">
     <form novalidate [formGroup]="formulario" (ngSubmit)="confirmarCompra()">
     
       <h5>Sua Compra</h5>
@@ -73,10 +73,10 @@
             class="form-control" 
             placeholder="Endereço" 
             autocomplete="off" 
-            formControlName="enderco"
+            formControlName="endereco"
           >
-          <small *ngIf="formulario.get('enderco').value && formulario.get('enderco').touched" class="form-text text-success">Ok</small>
-          <small *ngIf="!formulario.get('enderco').value && formulario.get('enderco').touched" class="form-text text-danger">Endereço inválido</small>
+          <small *ngIf="formulario.get('endereco').value && formulario.get('endereco').touched" class="form-text text-success">Ok</small>
+          <small *ngIf="!formulario.get('endereco').value && formulario.get('endereco').touched" class="form-text text-danger">Endereço inválido</small>
 
         </div>
 
@@ -129,8 +129,11 @@
       <button 
         type="submit" 
         class="btn btn-primary btn-lg"
-        [disabled]="!formulario.valid"
       >Cofirmar compra</button>
     </form>
   </div>
+<div class="ordem-compra" *ngIf="idPedidoCompra !== undefined">
+  <app-ordem-compra-sucesso [idPedidoCompra]="idPedidoCompra"></app-ordem-compra-sucesso>
+</div>
+
 </div>

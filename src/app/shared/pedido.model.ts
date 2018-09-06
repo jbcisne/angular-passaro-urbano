@@ -4,7 +4,7 @@ export class Pedido {
         public numero: string,
         public complemento: string,
         public formaPagamento: string
-        //,public id: number
+        ,public id: number
     ) {
 
     }
