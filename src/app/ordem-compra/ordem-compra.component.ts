@@ -4,13 +4,14 @@ import { Pedido } from '../shared/pedido.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 //import sem chaves pois foi feito um "export defult"
-import CarrinhoService from '../carrinho.service';
+import { CarrinhoService } from '../carrinho.service';
+import { ItemCarrinho } from '../shared/item-carrinho.model';
 
 @Component({
   selector: 'app-ordem-compra',
   templateUrl: './ordem-compra.component.html',
   styleUrls: ['./ordem-compra.component.css'],
-  providers: [ OrdemCompraService, CarrinhoService ]
+  providers: [ OrdemCompraService ]
 })
 export class OrdemCompraComponent implements OnInit {
 
@@ -22,6 +23,8 @@ export class OrdemCompraComponent implements OnInit {
   })
 
   public idPedidoCompra: number
+  public itensCarrinho: ItemCarrinho[] = []
+
 
   constructor(
     private ordemCompraService: OrdemCompraService,
@@ -29,7 +32,7 @@ export class OrdemCompraComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('Itens carrinho: ', this.carrinhoService.exibirItens());
+    this.itensCarrinho = this.carrinhoService.exibirItens()
   }
 
   public confirmarCompra(): void {
@@ -43,8 +46,7 @@ export class OrdemCompraComponent implements OnInit {
         this.formulario.value.endereco,
         this.formulario.value.numero,
         this.formulario.value.complemento,
-        this.formulario.value.formaPagamento,
-        null
+        this.formulario.value.formaPagamento
       )
 
       this.ordemCompraService.efetivarCompra(pedido)
@@ -54,5 +56,12 @@ export class OrdemCompraComponent implements OnInit {
 
     }
     console.log(this.formulario)
+  }
+
+  public adicionar(item: ItemCarrinho): void {
+    this.carrinhoService.adicionarQuantidade(item);
+  }
+  public diminuir(item: ItemCarrinho): void {
+    this.carrinhoService.diminuirQuantidade(item);
   }
 }
