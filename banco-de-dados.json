@@ -220,6 +220,63 @@
       "complemento": "lçkj",
       "formaPagamento": "dinheiro",
       "id": 5
+    },
+    {
+      "endereco": "ewre",
+      "numero": "98",
+      "complemento": "opipo",
+      "formaPagamento": "dinheiro",
+      "itens": [
+        {
+          "id": 3,
+          "img": {
+            "url": "/assets/ofertas/3/img1.jpg"
+          },
+          "titulo": "Pizzas Grandes",
+          "descricao_oferta": "Pizza Grande, Mussarela, Marguerita ou outras!",
+          "valor": 21.9,
+          "quantidade": 2
+        }
+      ],
+      "id": 6
+    },
+    {
+      "endereco": "adsfasdf",
+      "numero": "90",
+      "complemento": "lkl",
+      "formaPagamento": "dinheiro",
+      "itens": [
+        {
+          "id": 1,
+          "img": {
+            "url": "/assets/ofertas/1/img1.jpg"
+          },
+          "titulo": "Super Burger",
+          "descricao_oferta": "Rodízio de Mini-hambúrger com opção de entrada.",
+          "valor": 29.9,
+          "quantidade": 9
+        }
+      ],
+      "id": 7
+    },
+    {
+      "endereco": "kjkljlklk",
+      "numero": "09",
+      "complemento": "909",
+      "formaPagamento": "debito",
+      "itens": [
+        {
+          "id": 6,
+          "img": {
+            "url": "/assets/ofertas/6/img1.jpg"
+          },
+          "titulo": "Academia de tiro",
+          "descricao_oferta": "Sessão de tiro dinâmico com Instrutor, Estande, Alvo e Equipamentos.",
+          "valor": 89.9,
+          "quantidade": 3
+        }
+      ],
+      "id": 8
     }
   ]
 }

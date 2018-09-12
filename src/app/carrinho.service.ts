@@ -59,6 +59,10 @@ class CarrinhoService {
             }
         } 
     }
+
+    public limparCarrinho(): void {
+        this.itens = []
+    }
 }
 
 export { CarrinhoService }
